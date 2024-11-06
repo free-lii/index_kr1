@@ -30,11 +30,11 @@ nav a:hover {
     color: #1e90ff; 
 }
 
-/* Стили для активного элемента в меню */
+
 nav a.active {
-    font-weight: bold;  /* Делаем текст жирным */
-    color: #1e90ff;     /* Меняем цвет активной ссылки на синий (можно изменить) */
-    border-bottom: 2px solid #1e90ff; /* Добавляем подчеркивание для активного элемента */
+    font-weight: bold;
+    color: #1e90ff;     
+    border-bottom: 2px solid #1e90ff;
 }
 
 img {
