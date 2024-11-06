@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости киберспорта</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+
+        .bold {
+            font-weight: bold; 
+            font-family: 'Roboto', sans-serif; 
+        }
+        .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto; 
+            max-width: 800px; 
+        }
+        .italic-list {
+            font-style: italic;
+            list-style-position: inside; 
+        }
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 100%; 
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #050429;
+        }
+        #largeImageModal {
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.8); 
+            justify-content: center; 
+            align-items: center; 
+            z-index: 1001; 
+        }
+        #largeImageModal img {
+            width: 80%; 
+            height: 400px; 
+            max-width: 600px; 
+        }
+        .close-button {
+            color: white; 
+            position: absolute; 
+            top: 10px; 
+            right: 20px; 
+            cursor: pointer; 
+            font-size: 30px; 
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="background-image"></div>
+
+    <nav>
+        <div style="text-align: center;">
+            <a href="index.html" class="active">Главная</a>
+            <a href="novice.html">Новости для новичков</a>
+            <a href="experienced.html">Новости для бывалых</a>
+            <a href="form.html" target="_self">Форма</a>
+            <a href="algorithmic_task.html" target="_self">Алгоритмическая задача</a>
+            <a href="passport.html">Паспорт</a>
+            <a href="passport_proba.html">Паспорт изменение</a>
+      
+        </div>
+    </nav>
+
+    <div class="content center">
+        <h1>Вы получили доступ к нашему киберспортивному сайту!</h1>
+        
+        <h3>На нашем сайте вы узнаете:</h3>
+        <ol class="italic-list">
+            <li>Информацию о новостях киберспорта <a href="#section1" style="color: white; text-decoration: underline;">(Раздел №1)</a></li>
+            <li>Как заполнить заявку на участие в киберспортивном турнире <a href="form.html" style="color: white;">(Форма)</a></li>
+            <li>Видео с наших турниров <a href="https://rutube.sport/video/grand-final-cs2-world-cup-2024-natus-vincere-vs-g2-6/" target="_blank" style="color: white;">(Ссылка на видео)</a></li>
+            <li>Также информацию о новейших игровых турнирах <a href="#section2" style="color: white;">(Раздел №2)</a></li>
+        </ol>
+
+        <div class="left">
+            <section id="section1">
+                <h2>Раздел №1</h2>
+                <p>На данный момент в киберспорте происходит множество удивительных событий. Так например, завершился чемпионат Лиги Легенд, который прошёл в корейских городах и получил охват по всему миру. На данном турнире были спортсмены особо сильно выделяющиеся по сравнению с другой группой киберспортсменов это Chovy и Ruler из Gen.G. Их взаимодействие на поле стало прекрасным примером командной работы и стратегического мышления.</p>
+                
+                <img src="4.jpg" alt="Мини" width="100" height="auto" style="cursor: pointer;" onclick="showLargeImage()">
+
+                <div id="largeImageModal">
+                    <span class="close-button" onclick="closeLargeImage()">&times;</span>
+                    <img src="4.jpg" alt="Бигги" width="600" height="400">  
+                </div>
+                <p>BetBoom Team прошла в следующий раунд виннеров, где 24 октября в 11:00 мск сыграет против победителя встречи Tundra Esports — Gaimin Gladiators. Aurora Gaming упала в нижнюю сетку, где сразится с проигравшим из этой же пары. Матч между коллективами Егора Nightfall Григоренко и Квина Quinn Каллахана продолжит игровой день.</p>
+            </section>
+            <div style="text-align: center; margin: 20px 0;">
+                <a href="experienced.html">
+                    <img src="5.jpg" alt="Новости для бывалых" width="700" height="auto" style="cursor: pointer;">
+                </a>
+            </div>
+        </div>
+
+        <script>
+            function showLargeImage() {
+                document.getElementById("largeImageModal").style.display = "flex";
+            }
+
+            function closeLargeImage() {
+                document.getElementById("largeImageModal").style.display = "none";
+            }
+        </script>
+        
+        <div class="content center">
+            <h1>Давайте изучим последние новости киберспорта!</h1>
+            <div class="left">
+                <section id="section2">
+                    <h2>Раздел №2</h2>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li>Team Waska</li>
+                        <ul>
+                            <li>BetBoom Team не оставила шансов Team Waska в матче второго группового этапа на DreamLeague Season 24 по Dota 2.</li>
+                            <li>DreamLeague Season 24 проходит с 27 октября по 10 ноября. Коллективы сражаются за призовой фонд в размере миллиона долларов и 14 600 очков EPT.</li>
+                            <li>О проигрыше команд ыпереживает большая фанбаза и ходят слкхи, что это столкновении будет решающим для всей команды!</li>
+                        </ul>
+                        <li>Team Falcons
+                            <ul>
+                                <li>Team Falcons встретилась с Tundra Esports в рамках второго группового этапа на DreamLeague Season 24 по Dota 2. Коллектив Аммара ATF Ассафа победил со счётом 2:1.</li>
+                                <li>В следующем матче 4 ноября в 13:00 мск Falcons померятся силами с Xtreme Gaming. Tundra 4 ноября в 20:00 мск сразится с Team Liquid.</li>
+                                <li>DreamLeague Season 24 проходит с 27 октября по 10 ноября. Коллективы сражаются за призовой фонд в размере миллиона долларов и 14 600 очков EPT.</li>
+                            </ul>
+                        </li>
+                        <li>The Mongolz
+                            <ul>
+                                <li>The Mongolz оказались сильнее Heroic в гранд-финале Thunderpick World Championship 2024 по CS2. Встреча завершилась со счётом — 3:1 (13:8 на Dust2, 6:13 на Ancient, 13:11 на Anubis и 13:2 на Mirage). За победу на чемпионате Гаридмагнай blitz Бямбасурен и команда получили $500 тыс.</li>
+                                <li>За второе место Heroic заработала $150 тыс. Третью строчку заняла Team 3DMAX — коллектив Брайана Maka Канды получил $70 тыс. На четвертом месте расположилась OG и заработала $50 тыс.</li>
+                                <li>Thunderpick World Championship 2024 прошел с 21 октября по 3 ноября. Коллективы разыграли призовой фонд в размере $850 тыс.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <table>
+                        <tr>
+                            <th>Название</th>
+                            <th>Описание и ссылка</th>
+                            <th>Увеличенное изображение</th>
+                        </tr>
+                        <tr>
+                            <td class="background-cell"><img src="1.jpg" width="300"></td>
+                            <td>КиберПрайд — один их самых популярных компьютерных клубов в Химках...</td>
+                            <td><a href="1.jpg" target="_blank">Увеличенное изображение</a></td>
+                        </tr>
+                        <tr>
+                            <td><img src="2.jpg" width="300"></td>
+                            <td>Коллизеус — дорогой вариант киберклуба. Однако тут пользователи платят за хорошее ПО и мощные компьютеры. <a href="https://colizeumarena.com/?ysclid=m2lv6i6yox264014114" target="_blank">Открыть сайт</a></td>
+                            <td><a href="2.jpg" target="_blank">Увеличенное изображение</a></td>
+                        </tr>
+                        <tr>
+                            <td class="background-cell"><img src="3.jpg" width="300"></td>
+                            <td>КиберПрайд мини — меньшая версия большого клуба, в которой хорошо можно отдохнуть с друзьями. Большое количество школьников. <a href="https://kiberpride.ru/club/himki-melnikova2b/?utm_source=yandex&utm_medium=cpc&utm_campaign=kry_obshee_msk_poisk&utm_content=ch_yandex_direct|cid_114403995|gid_5494890020|ad_16515396631|ph_53113011311|crt_0|pst_premium|ps_1|srct_search|src_none|devt_desktop|ret_53113011311|geo_10758|cf_0|int_|tgt_53113011311|add_no|dop_&utm_term=---autotargeting&yclid=16457656880550641663" target="_blank">Открыть сайт</a></td>
+                            <td><a href="3.jpg" target="_blank">Увеличенное изображение</a></td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="#section1" style="color: white; text-decoration: underline;">Вернуться к Разделу 1</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

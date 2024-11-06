@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости киберспорта</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        .bold {
+            font-weight: bold; 
+            font-family: 'Roboto', sans-serif; 
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto; 
+            max-width: 800px; 
+        }
+
+        .italic-list {
+            font-style: italic; 
+            list-style-position: inside;
+        }
+    
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 100%; 
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #050429;
+        }
+
+        #largeImageModal {
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.8); 
+            justify-content: center; 
+            align-items: center; 
+            z-index: 1001; 
+        }
+        #largeImageModal img {
+            width: 80%; 
+            height: auto; 
+            max-width: 600px; 
+        }
+
+        .close-button {
+            color: white; 
+            position: absolute; 
+            top: 10px; 
+            right: 20px; 
+            cursor: pointer; 
+            font-size: 30px; 
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+        .image-container img {
+            width: 250px;
+            height: auto;
+            transition: transform 0.3s;
+            border-radius: 10px;
+            width: 100%;
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #9e71b3;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px 0;
+            position: absolute;
+            bottom: 125%; 
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="background-image"></div>
+
+    <nav>
+        <div style="text-align: center;">
+            <a href="index.html" >Главная</a>
+            <a href="novice.html"class="active">Новости для новичков</a>
+            <a href="experienced.html">Новости для бывалых</a>
+            <a href="form.html" target="_self">Форма</a>
+            <a href="algorithmic_task.html" target="_self">Алгоритмическая задача</a>
+            <a href="passport.html">Паспорт</a>
+            <a href="passport_proba.html">Паспорт изменение</a>
+      
+        </div>
+    </nav>
+
+    <div class="content center">
+        <h1>Вы получили доступ к НОВОСТЯМ ДЛЯ НОВИЧКОВ!</h1>
+        
+        <h3>Информация для начинающих киберспортсменов:</h3>
+        <ul>
+            <li>Летний кибертурнир — одно из крупнейших событий, привлекающих игроков со всего мира, чтобы сразиться в популярных играх, таких как Dota 2 и CS:GO</li>
+            <li>Главный совет для новичков — работать над устойчивостью к стрессу, совершенствуя навыки за счет регулярных тренировок и анализа матчей</li>
+            <li>Самым популярным киберспортсменом сейчас является Faker, игрок в League of Legends, известный своей уникальной техникой и многократными победами на мировых чемпионатах</li>
+            <li>Лучшие саппорты в Dota 2 включают такие персонажи, как Crystal Maiden и Lion, которые обеспечивают поддержку и контроль врагов</li>
+            <li>Для роли миддера в Dota 2 популярны персонажи вроде Storm Spirit и Templar Assassin благодаря их сильным способностям и доминированию на средней линии</li>
+        </ul>
+
+        <div class="text-section">
+            <p><b>Киберспорт</b> набирает популярность как полноценная спортивная дисциплина, привлекая спонсоров и зрителей со всего мира. 
+            Многие команды и игроки достигают профессионального уровня, соревнуясь за значительные призовые фонды и популярность.</p>
+        </div>
+
+
+        <div class="image-container">
+            <div class="tooltip">
+                <img src="уу.jpg" alt="Турнир">
+                <span class="tooltiptext">Пример турнира</span>
+            </div>
+            <div class="tooltip">
+            <img src="scale_1200.jfif" alt="Рост киберспорта">
+            <span class="tooltiptext">Рост популярности</span>
+       
+        </div>
+    </div>
+</body>
+</html>

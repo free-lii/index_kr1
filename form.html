@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма отправки данных</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .bold {
+            font-weight: bold; 
+            font-family: 'Roboto', sans-serif; 
+        }
+
+        .for_form {
+            background-color: rgba(0, 0, 0, 0.7); 
+            padding: 20px; 
+            border-radius: 10px; 
+            max-width: 400px; 
+            margin: 20px; 
+            color: white; 
+            text-align: left; 
+            margin-left: auto;
+            margin-right: auto; 
+        }
+
+        form {
+            width: 100%;
+        }
+
+        label {
+            display: block; 
+            margin: 10px 0 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #342d6e;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #7c6fc5;
+        }
+
+        .game_genres {
+            display: flex;
+            gap: 10px; 
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .image-center {
+            display: block; 
+            margin: 20px auto; 
+        }
+
+        .return-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            padding: 12px 20px; 
+            background-color: #221821; 
+            color: white; 
+            border-radius: 5px; 
+            text-decoration: none; 
+            width: 150px; 
+            margin-left: auto;
+            margin-right: auto; 
+        }
+
+        .groups {
+            display: flex;
+            gap: 10px; 
+            align-items: center;
+            margin: 10px 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+
+    <nav>
+        <div style="text-align: center;">
+            <a href="index.html">Главная</a>
+            <a href="novice.html">Новости для новичков</a>
+            <a href="experienced.html">Новости для бывалых</a>
+            <a href="form.html" target="_self" class="active">Форма</a> 
+            <a href="algorithmic_task.html" target="_self">Алгоритмическая задача</a>
+            <a href="passport.html">Паспорт</a>
+            <a href="passport_proba.html">Паспорт проба</a>
+        </div>
+    </nav>
+
+    <div class="for_form">
+        <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+            <p><input type="hidden" name="q" value="search"></p>
+            <h2>Форма для отправки даных об игровом опыте</h2>
+        
+            <label for="lastname">Фамилия:</label>
+            <input type="text" id="lastname" name="lastname" required value="Андреева">
+        
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required value="София">
+        
+            <label for="team">Желаемая команда:</label>
+            <select id="team" name="team" required>
+                <option value="Falcons">Falcons</option>
+                <option value="The Mongolz">The Mongolz</option>
+                <option value="BetBoom Team">BetBoom Team</option>
+            </select>
+
+            <div class="game_genres">
+                <label>Какой жанр игр предпочтительнее?</label>
+                <input type="radio" id="genre_rpg" name="game_genre" value="RPG" checked>
+                <label for="genre_rpg">RPG</label>
+                <input type="radio" id="genre_novel" name="game_genre" value="Novel">
+                <label for="genre_novel">NOVEL</label>
+                <input type="radio" id="genre_action" name="game_genre" value="Action">
+                <label for="genre_action">ACTION</label>
+            </div>
+        
+            <label for="subscribe">Подписаться на новости Киберсайта:</label>
+            <input type="checkbox" id="subscribe" name="subscribe" checked>
+
+            <p> Отзыв о сайте:
+                <br>
+                <TEXTAREA cols=50 rows=4 name="textarea" >Отзыв</TEXTAREA>
+            </p>
+        
+        
+            <label for="phone">Мобильный телефон:</label>
+            <input type="number" id="phone" name="phone" required value="88005353535">
+        
+            <label for="email">Электронная почта:</label>
+            <input type="email" id="email" name="email" required value="sof@gmail.com">
+        
+            <label for="user_password">Пароль:</label>
+            <input type="password" id="user_password" name="user_password" required value="291222">
+        
+            <label for="send_date">Дата отправки сообщения:</label>
+            <input type="date" name="user_date" value="2024-11-06">
+        
+            <button type="submit">Отправить</button>
+            <button type="Reset">Обновить</button>
+        </form>
+    </div>
+
+    <img src="kkk.jpg" alt="изображение" class="image-center" width="400" height="250">
+
+    <div class="for_form">
+        <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+            <p><input type="hidden" name="q" value="search"></p>
+            <h2>Форма для отправки личных контактных данных</h2>
+        
+            <label for="lastname">Фамилия:</label>
+            <input type="text" id="lastname" name="lastname" required value="Андреева">
+        
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required value="София">
+
+            <label for="team">Группа:</label>
+            <select id="team" name="team" required>
+                <option value="team1">1</option>
+                <option value="team2">2</option>
+                <option value="team3">3</option>
+            </select>
+        
+            <label for="phone">Мобильный телефон:</label>
+            <input type="number" id="phone" name="phone" required value="88005353535">
+        
+            <label for="email">Электронная почта:</label>
+            <input type="email" id="email" name="email" required value="sof@gmail.com">
+        
+            <label for="send_date">Дата отправки сообщения:</label>
+            <input type="date" name="user_date" value="2024-11-06">
+        
+            <button type="submit">Отправить</button>
+            <button type="Reset">Обновить</button>
+        </form>
+    </div>
+
+    <a href="index.html" class="return-link">Вернуться на главную страницу</a>
+
+</body>
+</html>
+

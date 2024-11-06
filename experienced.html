@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости киберспорта</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        .bold {
+            font-weight: bold; 
+            font-family: 'Roboto', sans-serif; 
+        }
+ 
+        .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto; 
+            max-width: 800px; 
+        }
+
+        .italic-list {
+            font-style: italic; 
+            list-style-position: inside; 
+        }
+
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 100%; 
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #050429;
+        }
+
+        #largeImageModal {
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.8); 
+            justify-content: center; 
+            align-items: center; 
+            z-index: 1001; 
+        }
+        #largeImageModal img {
+            width: 80%;
+            height: auto; 
+            max-width: 600px;
+        }
+
+        .close-button {
+            color: white; 
+            position: absolute; 
+            top: 10px; 
+            right: 20px; 
+            cursor: pointer; 
+            font-size: 30px; 
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+        .image-container img {
+            width: 250px;
+            height: auto;
+            transition: transform 0.3s;
+            border-radius: 10px;
+            width: 100%;
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #9e71b3;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px 0;
+            position: absolute;
+            bottom: 125%; 
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="background-image"></div>
+
+    <nav>
+        <div style="text-align: center;">
+            <a href="index.html" >Главная</a>
+            <a href="novice.html">Новости для новичков</a>
+            <a href="experienced.html"class="active">Новости для бывалых</a>
+            <a href="form.html" target="_self">Форма</a>
+            <a href="algorithmic_task.html" target="_self">Алгоритмическая задача</a>
+            <a href="passport.html">Паспорт</a>
+            <a href="passport_proba.html">Паспорт изменение</a>
+      
+        </div>
+    </nav>
+
+    <div class="content center">
+        <h1 id="cyber-info"> Вы получили доступ к НОВОСТЯМ ДЛЯ БЫВАЛЫХ ГЕЙМЕРОВ!</h1>
+        
+        <h3 >Информация для начинающих киберспортсменов:</h3>
+        <ul>
+            <li>Недавние релизы игр: В ноябре 2024 года ожидаются важные релизы, такие как "Dragon Quest III HD-2D Remake" и "LEGO Horizon Adventures", которые обещают привлечь внимание как старых, так и новых поклонников игр. Эти релизы охватывают разнообразные жанры и обеспечивают увлекательный геймплей для всех игроков.</li>
+            <li>Упражнения для спины для геймеров:Долгое время за компьютером может вызывать дискомфорт в спине. Рекомендуется делать растяжки для поясницы, выполнять укрепляющие упражнения для мышц кора и соблюдать правильную осанку, чтобы избежать проблем со спинойвая компьютерная игра: Самая первая компьютерная игра, созданная в 1958 году, — это "Tennis for Two". Она стала важной вехой в истории видеоигр и положила начало дальнейшему развитию этой индустрии .</li>
+            <li>Сткоторые все еще популярны: Классические игры, такие как "Tetris" и "Super Mario Bros.", остаются актуальными благодаря своей простоте и увлекательному геймплею. Эти игры доступны на современных платформах и продолжают привлекать внимание новых игроков  .</li>
+            <li>Обновление личение объема оперативной памяти и замена видеокарты являются ключевыми шагами для повышения производительности вашего ПК. Эти улучшения обеспечивают лучшую графику и плавность игрового процесса  .</li>
+            <li>Польза головоломок для мозга: такиеие как "Portal" и "The Witness", развивают логическое мышление и креативность. Они полезны не только для улучшения когнитивных навыков, но и для расслабления и снятия стресса после напряженного игрового дня  .</li>
+        </ul>
+        <table>
+            <tr>
+                <th>Игра</th>
+                <th>Описание</th>
+                <th>Увеличенное изображение</th>
+            </tr>
+            <tr>
+                <td><img src="hor.jpg" width="500"></td>
+                <td>Horizon Zero Dawn, разработанная студией Guerrilla Games, погружает игрока в мир, где природа сосуществует с гигантскими механическими существами. Игрок берет на себя роль Элой, охотницы из племени Нора, пытающейся выяснить причины упадка человечества и происхождение роботов-животных.</td>
+                <td><a href="hor.jpg" target="_blank">Увеличенное изображение</a></td>
+            </tr>
+            <tr>
+                <td><img src="ved.jpeg" width="500"></td>
+                <td>The Witcher 3: Wild Hunt от польской студии CD Projekt Red — это фэнтезийная ролевая игра, основанная на книгах Анджея Сапковского о ведьмаке Геральте из Ривии. Геральт — профессиональный охотник на монстров, который отправляется на поиски своей приёмной дочери Цири, скрывающейся от таинственной Дикой Охоты.</td>
+                <td><a href="ved.jpeg" target="_blank">Увеличенное изображение</a></td>
+            </tr>
+            <tr>
+                <td><img src="bai.jpg" width="500"></td>
+                <td>Bayonetta, разработанная студией PlatinumGames, — это экшн-игра в жанре hack and slash, где главный персонаж, ведьма Байонетта, сражается с множеством врагов в сверхстильных боях. Байонетта обладает сверхчеловеческими способностями и множеством уникальных оружий, которые позволяют ей выполнять эффектные комбо-атаки.</td>
+                <td><a href="bai.jpg" target="_blank">Увеличенное изображение</a></td>
+            </tr>
+        </table>
+        
+        <div class="text-section">
+            <p>Для старых геймеров, которые помнят клацанье джойстиков на первых игровых консолях и шум модемов, мир новых игр сегодня полон сюрпризов и возможностей. Если вы все еще с теплотой вспоминаете пиксели "Contra" или бесконечные уровни "Mario," вам стоит открыть для себя новинки, которые продолжили эволюцию этих классических жанров и перенесли их в мир реалистичной графики и интерактивных сюжетов.</p>
+        </div>
+
+        <div class="image-container">
+            <div class="tooltip">
+                <img src="mar.jpg" alt="Марио">
+                <span class="tooltiptext">Популярная игра — Mario</span>
+            </div>
+            
+            <div class="tooltip">
+            <img src="еуе.jpg" alt="Тетрис">
+            <span class="tooltiptext">Популярная игра — Tetris</span>
+       
+        </div>
+        
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="#cyber-info" style="color: white; text-decoration: underline;">Вернуться в начало</a>
+    </div>
+</body>
+</html>

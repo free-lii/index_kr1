@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка сцены</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+      
+        .content-table {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            margin: 40px auto; 
+            padding-top: 10px;
+        }
+
+        h2 {
+            color: #fff;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #fff; 
+        }
+
+        input[type="number"] {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #342d6e;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #9e71b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            text-align: center;
+            color: #fff; 
+        }
+
+        .button {
+            text-align: center; 
+            padding: 10px; 
+        }
+
+        .button a {
+            text-decoration: none; 
+            padding: 10px 15px; 
+            background-color: #221821; 
+            color: white; 
+            border-radius: 5px; 
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="novice.html">Новости для новичков</a>
+        <a href="experienced.html">Новости для бывалых</a>
+        <a href="form.html" target="_self">Форма</a>
+        <a href="algorithmic_task.html" target="_self" class="active">Алгоритмическая задача</a>
+        <a href="passport.html">Паспорт</a>
+        <a href="passport_proba.html">Паспорт изменение</a>
+    </nav>
+    <div class="content-table">
+        <h2>Проверка размера сцены</h2>
+        <p class="intro-text">Можно ли в квадратном зале площадью S поместить круглую сцену радиусом R так, чтобы от стены до сцены был проход не менее K?</p>
+        
+        <label for="S">Введите площадь квадратного зала (S):</label>
+        <input type="number" id="S">
+
+        <label for="R">Введите радиус сцены (R):</label>
+        <input type="number" id="R">
+
+        <label for="K">Введите необходимую длину прохода (K):</label>
+        <input type="number" id="K">
+
+        <button onclick="checkStage()">Проверить</button>
+        <button onclick="sendData()">Отправить</button>
+
+        <p id="result"></p>
+    </div>
+
+    <div class="button">
+        <a href="index.html">Вернуться на главную страницу</a>
+    </div>
+
+    <form id="sendForm" action="https://www.bing.com/search?" method="GET" target="_blank" style="display:none;">
+        <input type="hidden" name="q" value="search">
+        <input type="hidden" name="formulation" value="Можно ли в квадратном зале площадью S поместить круглую сцену радиусом R так, чтобы от стены до сцены был проход не менее K?">
+        <input type="hidden" name="S" id="formS">
+        <input type="hidden" name="R" id="formR">
+        <input type="hidden" name="K" id="formK">
+        <input type="hidden" name="L" id="formL">
+        <input type="hidden" name="C" id="formC">
+        <input type="hidden" name="result" id="formResult">
+    </form>
+
+    <script>
+        function checkStage() {
+            const S = parseFloat(document.getElementById("S").value);
+            const R = parseFloat(document.getElementById("R").value);
+            const K = parseFloat(document.getElementById("K").value);
+
+            const L = Math.sqrt(S).toFixed(2);
+            const C = (L - 2 * R).toFixed(2);
+
+            const canFit = C >= K;
+            let resultText = `Оставшееся длина зала: ${C}<br>`;
+            resultText += canFit ? "Можно." : "Нельзя.";
+
+            document.getElementById("result").innerHTML = resultText;
+
+            document.getElementById("formS").value = S;
+            document.getElementById("formR").value = R;
+            document.getElementById("formK").value = K;
+            document.getElementById("formL").value = L;
+            document.getElementById("formC").value = C;
+            document.getElementById("formResult").value = canFit ? "Можно." : "Нельзя.";
+            return canFit; 
+        }
+
+        function sendData() {
+            if (checkStage()) {
+                document.getElementById("sendForm").submit();
+            } else {
+                alert("Отправка невозможна: условие не выполнено.");
+            }
+        }
+    </script>
+</body>
+</html>
